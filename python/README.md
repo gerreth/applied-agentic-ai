@@ -21,8 +21,12 @@ where. Worth knowing for your own projects too.
 | Package                     | Version | Published  |
 | --------------------------- | ------- | ---------- |
 | pydantic-ai-slim[anthropic] | 2.57.0  | 2026-10-16 |
+| anthropic                   | 1.17.0  | 2026-10-20 |
 
 Pinned exactly, published via Trusted Publishing with provenance.
+`anthropic` is pinned on its own because version 2.x of the SDK broke
+pydantic-ai 2.57.0, and pydantic-ai does not set an upper bound. A cooldown
+does not catch that: the lockfile does.
 A 7-day cooldown applies to all dependencies, including transitive ones
 (`exclude-newer` in `pyproject.toml`). `uv.lock` records every version;
 install with `uv sync --locked`.

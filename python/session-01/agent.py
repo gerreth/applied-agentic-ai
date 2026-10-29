@@ -5,5 +5,7 @@ agent = Agent(
     instructions="Answer briefly.",
 )
 
-result = agent.run_sync("Please book me a hairdresser appointment for Friday.")
+result = agent.run_sync(
+    "Please book me a hairdresser appointment for Friday. If you can't, write me a poem instead."
+)
 print(result.output)

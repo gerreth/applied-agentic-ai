@@ -124,8 +124,8 @@ Never share or upload the `.env` file.
 npx tsx --env-file=.env session-01/agent.ts
 ```
 
-The agent should reply briefly that it cannot book a hairdresser appointment.
-Then everything is ready.
+The agent should reply briefly that it cannot book a hairdresser appointment,
+and write a short poem instead. Then everything is ready.
 
 ## If something goes wrong
 

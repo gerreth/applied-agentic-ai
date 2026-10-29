@@ -97,6 +97,8 @@ uv sync --locked
 ```
 
 Installs exactly the versions from `uv.lock` and, the first time, Python as well.
+Do not use pip or a Python already on your machine: the packages need
+Python 3.11 or newer, and uv brings a matching one.
 
 ## 6. Add your API key
 
@@ -123,8 +125,8 @@ Never share or upload the `.env` file.
 uv run --env-file .env session-01/agent.py
 ```
 
-The agent should reply briefly that it cannot book a hairdresser appointment.
-Then everything is ready.
+The agent should reply briefly that it cannot book a hairdresser appointment,
+and write a short poem instead. Then everything is ready.
 
 ## If something goes wrong
 
@@ -132,7 +134,7 @@ Then everything is ready.
 | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `command not found` / "is not recognized as the name …" | Close and reopen the terminal. If that does not help, restart the computer.                                                                                                                                                  |
 | `brew` unknown after installation                       | The "Next steps" are still missing. macOS: `echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile`, Linux: `echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc`, then reopen the terminal. |
-| "Required uv version … does not match"                  | uv is too old, see step 3.                                                                                                                                                                                                   |
+| "Failed to parse `pyproject.toml`" mentioning `exclude-newer` | uv is too old, see step 3.                                                                                                                                                                                          |
 | `No pyproject.toml found`                               | You are not in the `python` folder, repeat step 4.                                                                                                                                                                           |
 | `authentication_error` / `invalid x-api-key`            | Check the key in `.env`: no quotes around the key, no spaces.                                                                                                                                                                |
 
